@@ -35,7 +35,7 @@ function Rows({ items }) {
 }
 
 export default function BeforeAfterSlider({
-  title = "The same project, two very different weeks",
+  title = "The same project, two different weeks",
   subtitle = "Drag the handle to compare.",
   beforeLabel = "Without Scrum",
   afterLabel = "With Scrum",
@@ -79,11 +79,6 @@ export default function BeforeAfterSlider({
       <h2>{title}</h2>
       <p className="ba-sub">{subtitle}</p>
 
-      <div className="ba-labels">
-        <button type="button" className="ba-l1" onClick={() => setPos(100)}>{beforeLabel}</button>
-        <button type="button" className="ba-l2" onClick={() => setPos(0)}>{afterLabel}</button>
-      </div>
-
       <div
         ref={boxRef}
         className={`ba-wrap${dragging ? " ba-dragging" : ""}`}
@@ -93,11 +88,29 @@ export default function BeforeAfterSlider({
         onPointerCancel={onPointerUp}
       >
         <div className="ba-box">
-          <div className="ba-layer ba-before"><Rows items={before} /></div>
-          <div className="ba-layer ba-after" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
-            <Rows items={after} />
+          
+          {/* CAMADA "BEFORE" (Esquerda) */}
+          <div className="ba-layer ba-before">
+            <div className="ba-layer-header ba-header-before">
+              <span>{beforeLabel}</span>
+            </div>
+            <div className="ba-content">
+              <Rows items={before} />
+            </div>
           </div>
+
+          {/* CAMADA "AFTER" (Direita) */}
+          <div className="ba-layer ba-after" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
+            <div className="ba-layer-header ba-header-after">
+              <span>{afterLabel}</span>
+            </div>
+            <div className="ba-content">
+              <Rows items={after} />
+            </div>
+          </div>
+
         </div>
+
         <div
           className="ba-handle"
           style={{ left: `${pos}%` }}

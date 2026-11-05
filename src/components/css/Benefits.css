@@ -2,27 +2,62 @@
   padding: 80px 24px 96px;
   text-align: center;
 }
+
 .benefits h2 {
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
 }
+
 .benefits-sub {
   margin: 12px auto 48px;
   font-size: 1.1rem;
   color: #4a5578;
 }
-.benefits ul {
-  list-style: none;
-  max-width: 1120px;
+
+/* Container flex principal */
+.benefits-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  gap:5rem
+}
+
+.benefits-left,
+.benefits-right {
+  flex: 1;
+  min-width: 0; /* Evita que o flexbox estique além da metade */
+  width: 100%;
+}
+
+.benefits-left h2,
+.benefits-right h2 {
+  margin-top: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+}
+
+/* Grelha 2x2 para os 4 cartões da esquerda */
+.benefits-left ul {
+  list-style: none;
   padding: 0;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
+/* Responsividade: empilha em ecrãs menores que 900px */
 @media (max-width: 900px) {
-  .benefits ul { grid-template-columns: repeat(2, 1fr); }
+  .benefits-container {
+    flex-direction: column;
+  }
 }
+
 @media (max-width: 520px) {
-  .benefits ul { grid-template-columns: 1fr; }
+  .benefits-left ul {
+    grid-template-columns: 1fr;
+  }
 }

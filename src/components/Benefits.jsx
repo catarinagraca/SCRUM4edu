@@ -46,15 +46,21 @@ export default function Benefits() {
     <section className="benefits" id="benefits">
       
       {/* Animação do cabeçalho da secção */}
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.8 }} // Dispara quando 80% do cabeçalho estiver visível
         transition={{ duration: 0.6 }}
       >
+
+      
+      <div className="benefits-container">
+      <div className="benefits-left">
+        
+      <div>
         <h2>Why use SCRUM in the classroom?</h2>
         <p className="benefits-sub">Immediate advantages for you and your students.</p>
-      </motion.div>
+      </div>
 
       {/* Lista animada */}
       <motion.ul
@@ -62,13 +68,20 @@ export default function Benefits() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }} // Dispara quando 20% da lista estiver visível
-      >
+        >
         {benefits.map((benefit) => (
           <BenefitItem key={benefit.title} {...benefit} />
         ))}
       </motion.ul>
+      
 
+      </div>
+      <div className="benefits-right">
       <BeforeAfterSlider />
+      </div>
+      </div>
+      
+      </motion.div>
     </section>
   );
 }
