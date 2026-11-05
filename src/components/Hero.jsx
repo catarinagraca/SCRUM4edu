@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import SprintBoard from "./SprintBoard";
+import "./css/Hero.css"; 
 
 export default function Hero() {
   return (

@@ -1,0 +1,75 @@
+.glossary-table__wrapper {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.glossary-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+/* Cabeçalho */
+.glossary-table__th {
+  padding: 0.9rem 1rem;
+  background: #111827;
+  text-align: left;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.glossary-table__th--term {
+  width: 24%;
+  color: #ffffff;
+}
+
+.glossary-table__th--context {
+  width: 26%;
+  color: #fde68a;
+}
+
+.glossary-table__th--meaning {
+  color: #fdba74;
+}
+
+/* Linhas */
+.glossary-row td {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.glossary-row:nth-child(even) {
+  background: #f8fafc;
+}
+
+.glossary-row:hover {
+  background: #eff6ff;
+}
+
+.glossary-row__term {
+  font-weight: 700;
+  color: #111827;
+}
+
+.glossary-row__context {
+  color: #374151;
+}
+
+.glossary-row__meaning {
+  color: #1e40af;
+}
+
+/* Sem resultados */
+.glossary-table__empty {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
