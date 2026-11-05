@@ -414,3 +414,294 @@
   color: var(--sc-text-muted);
   flex-shrink: 0;
 }
+
+/* SECTION 2: The three classroom ceremonies */
+.sc-ceremonies-section {
+  padding: 28px 0 64px;
+}
+
+.sc-section-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--sc-navy);
+  margin: 0 0 24px;
+}
+
+@media (max-width: 640px) {
+  .sc-section-title {
+    font-size: 28px;
+  }
+}
+
+/* Ceremony Tab Buttons */
+.sc-ceremony-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sc-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 14px;
+  border: 1.5px solid var(--sc-navy);
+  color: var(--sc-navy);
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.sc-tab-green {
+  background-color: var(--sc-green);
+}
+
+.sc-tab-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-tab-coral {
+  background-color: var(--sc-coral);
+}
+
+.sc-tab-btn.is-active {
+  background-color: var(--sc-navy);
+  color: var(--sc-white);
+}
+
+.sc-tab-btn:hover:not(.is-active) {
+  transform: translateY(-1px);
+}
+
+/* Main Ceremony Panel Card */
+.sc-ceremony-panel {
+  padding: 36px 38px;
+}
+
+@media (max-width: 640px) {
+  .sc-ceremony-panel {
+    padding: 24px 20px;
+  }
+}
+
+.sc-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sc-mini-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: var(--sc-navy);
+}
+
+.sc-panel-lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #2f3b4c;
+  margin: 0 0 28px;
+  max-width: 880px;
+}
+
+.sc-panel-lead strong {
+  color: var(--sc-navy);
+  font-weight: 700;
+}
+
+.sc-sub-heading {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin: 0 0 16px;
+}
+
+.sc-sub-heading.sc-no-margin {
+  margin: 0;
+}
+
+/* 3-Column Sub Cards */
+.sc-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 820px) {
+  .sc-three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sc-sub-card {
+  background-color: var(--sc-card-bg-subtle);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 14px;
+  padding: 22px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-sub-card-white {
+  background-color: var(--sc-white);
+}
+
+/* Stand-up Question Cards */
+.sc-question-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.sc-question-text {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.48;
+  color: var(--sc-navy);
+  margin: 0;
+}
+
+/* Review Format Cards */
+.sc-format-time {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 6px;
+}
+
+.sc-format-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 8px;
+}
+
+.sc-format-desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--sc-text-muted);
+  margin: 0;
+}
+
+/* Retrospective Template Switcher & Columns */
+.sc-retro-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sc-template-switch {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--sc-card-bg-subtle);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.sc-switch-opt {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--sc-navy);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sc-switch-opt.is-active {
+  background-color: var(--sc-navy);
+  color: var(--sc-white);
+}
+
+.sc-retro-col-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 4px;
+}
+
+.sc-retro-col-sub {
+  font-size: 13px;
+  color: var(--sc-text-muted);
+  margin-bottom: 16px;
+}
+
+.sc-retro-example {
+  margin-top: auto;
+  background-color: var(--sc-green);
+  color: var(--sc-navy);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 9px;
+}
+
+/* Callout / Pro-Tip Cards */
+.sc-callout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.sc-callout-grid.sc-callout-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 820px) {
+  .sc-callout-grid.sc-callout-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sc-callout-card {
+  background-color: var(--sc-yellow);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 4px 4px 0px var(--sc-navy);
+}
+
+.sc-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 10px;
+}
+
+.sc-callout-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(15, 28, 46, 0.85);
+  margin: 0;
+}
+
+.sc-callout-text strong {
+  color: var(--sc-navy);
+  font-weight: 700;
+}
