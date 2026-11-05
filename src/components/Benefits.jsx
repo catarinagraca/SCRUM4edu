@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Compass, Eye, UserCheck, RefreshCw } from "lucide-react";
 import BenefitItem from "./BenefitItem";
+import BeforeAfterSlider from "./BeforeAfterSlider";
+import "./css/Benefits.css";
 
 const benefits = [
   {
@@ -65,7 +67,8 @@ export default function Benefits() {
           <BenefitItem key={benefit.title} {...benefit} />
         ))}
       </motion.ul>
-      
+
+      <BeforeAfterSlider />
     </section>
   );
 }

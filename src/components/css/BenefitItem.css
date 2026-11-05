@@ -1,0 +1,22 @@
+.benefit {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px 24px 36px;
+  box-shadow: 0 2px 12px rgba(28, 37, 65, 0.06);
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  margin: 0 auto 20px;
+}
+.benefit h3 { font-size: 1.25rem; margin-bottom: 10px; }
+.benefit p { margin: 0; color: #3d4766; font-size: 0.95rem; }
+
+.tone-blue   { background: #e6f0ff; color: #2f62d9; }
+.tone-indigo { background: #ecebff; color: #4b43d6; }
+.tone-green  { background: #e4f7ec; color: #17845a; }
+.tone-amber  { background: #fff3d6; color: #b86e00; }

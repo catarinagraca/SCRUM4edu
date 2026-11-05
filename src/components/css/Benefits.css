@@ -1,0 +1,28 @@
+.benefits {
+  padding: 80px 24px 96px;
+  text-align: center;
+}
+.benefits h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+}
+.benefits-sub {
+  margin: 12px auto 48px;
+  font-size: 1.1rem;
+  color: #4a5578;
+}
+.benefits ul {
+  list-style: none;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .benefits ul { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .benefits ul { grid-template-columns: 1fr; }
+}
