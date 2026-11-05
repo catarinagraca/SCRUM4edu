@@ -1,0 +1,12 @@
+.glossary {
+  min-height: 100vh;
+  padding: 3rem 1.5rem 4rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef4ff 100%);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #111827;
+}
+
+.glossary__container {
+  max-width: 920px;
+  margin: 0 auto;
+}
