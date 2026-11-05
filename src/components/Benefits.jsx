@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Compass, Eye, UserCheck, RefreshCw } from "lucide-react";
 import BenefitItem from "./BenefitItem";
 
@@ -27,17 +28,44 @@ const benefits = [
     text: "Short sprints let you spot problems in week one, not on deadline day.",
   },
 ];
+// Contentor da lista: controla o atraso em cascata (stagger) dos BenefitItems
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2 // Atraso de 0.2 segundos entre a entrada de cada cartão
+    }
+  }
+};
 
 export default function Benefits() {
   return (
     <section className="benefits" id="benefits">
-      <h2>Why use SCRUM in the classroom?</h2>
-      <p className="benefits-sub">Immediate advantages for you and your students.</p>
-      <ul>
+      
+      {/* Animação do cabeçalho da secção */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.8 }} // Dispara quando 80% do cabeçalho estiver visível
+        transition={{ duration: 0.6 }}
+      >
+        <h2>Why use SCRUM in the classroom?</h2>
+        <p className="benefits-sub">Immediate advantages for you and your students.</p>
+      </motion.div>
+
+      {/* Lista animada */}
+      <motion.ul
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // Dispara quando 20% da lista estiver visível
+      >
         {benefits.map((benefit) => (
           <BenefitItem key={benefit.title} {...benefit} />
         ))}
-      </ul>
+      </motion.ul>
+      
     </section>
   );
 }
