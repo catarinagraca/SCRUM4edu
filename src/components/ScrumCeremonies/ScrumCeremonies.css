@@ -86,7 +86,7 @@
 
 /* SECTION 1: Hero & Overview */
 .sc-hero-section {
-  padding: 64px 0 56px;
+  padding: 72px 0 88px;
 }
 
 .sc-hero-grid {
@@ -94,7 +94,7 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 48px;
   align-items: center;
-  margin-bottom: 56px;
+  margin-bottom: 68px;
 }
 
 @media (max-width: 860px) {
@@ -417,7 +417,7 @@
 
 /* SECTION 2: The three classroom ceremonies */
 .sc-ceremonies-section {
-  padding: 28px 0 64px;
+  padding: 56px 0 96px;
 }
 
 .sc-section-title {
@@ -708,7 +708,7 @@
 
 /* SECTION 3: Teacher's quick cheat-sheet */
 .sc-cheatsheet-section {
-  padding: 20px 0 80px;
+  padding: 48px 0 112px;
 }
 
 .sc-table-card {
