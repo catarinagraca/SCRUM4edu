@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import "./css/BenefitItem.css";
 
 const hoverColors = {
   blue: "#eff6ff",   // azul muito clarinho
