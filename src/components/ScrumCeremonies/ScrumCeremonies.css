@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.scrum-ceremonies-page {
+  --sc-navy: #0f1c2e;
+  --sc-text-muted: #5a6779;
+  --sc-bg: #f8f9fb;
+  --sc-white: #ffffff;
+  --sc-yellow: #ffd15c;
+  --sc-green: #8ae5b6;
+  --sc-blue: #b4cbff;
+  --sc-coral: #ff9c97;
+  --sc-card-bg-subtle: #f1f4f8;
+
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--sc-navy);
+  background-color: var(--sc-bg);
+  min-height: 100vh;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.scrum-ceremonies-page *,
+.scrum-ceremonies-page *::before,
+.scrum-ceremonies-page *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.sc-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+.sc-navbar {
+  border-bottom: 1.5px solid var(--sc-navy);
+  background-color: var(--sc-bg);
+}
+
+.sc-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.sc-logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  text-decoration: none;
+  letter-spacing: -0.4px;
+}
+
+.sc-logo span {
+  color: #6b7b93;
+  font-weight: 700;
+}
+
+.sc-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.sc-nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sc-navy);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.sc-nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Shared brutalist card shadow */
+.sc-card-shadow {
+  background: var(--sc-white);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 18px;
+  box-shadow: 5px 5px 0px var(--sc-navy);
+}
+
+/* SECTION 1: Hero & Overview */
+.sc-hero-section {
+  padding: 64px 0 56px;
+}
+
+.sc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+@media (max-width: 860px) {
+  .sc-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.sc-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--sc-text-muted);
+  margin: 0 0 14px;
+}
+
+.sc-hero-title {
+  font-size: 54px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.6px;
+  color: var(--sc-navy);
+  margin: 0 0 22px;
+}
+
+@media (max-width: 640px) {
+  .sc-hero-title {
+    font-size: 38px;
+  }
+}
+
+.sc-hero-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--sc-text-muted);
+  margin: 0 0 24px;
+  max-width: 540px;
+}
+
+.sc-hero-description strong {
+  color: var(--sc-navy);
+  font-weight: 700;
+}
+
+/* Small Pills */
+.sc-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.sc-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1.5px solid var(--sc-navy);
+  color: var(--sc-navy);
+}
+
+.sc-pill-yellow {
+  background-color: var(--sc-yellow);
+}
+.sc-pill-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-pill-green {
+  background-color: var(--sc-green);
+}
+
+.sc-pill-coral {
+  background-color: var(--sc-coral);
+}
+
+/* CTA Buttons */
+.sc-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.sc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 999px;
+  border: 1.5px solid var(--sc-navy);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.sc-btn-primary {
+  background-color: var(--sc-navy);
+  color: var(--sc-white);
+}
+
+.sc-btn-primary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px rgba(15, 28, 46, 0.35);
+}
+
+.sc-btn-secondary {
+  background-color: var(--sc-white);
+  color: var(--sc-navy);
+  box-shadow: 3px 3px 0px var(--sc-navy);
+}
+
+.sc-btn-secondary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--sc-navy);
+}
+
+.sc-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Right Card: One 45-minute period */
+.sc-period-card {
+  padding: 26px 28px;
+}
+
+.sc-period-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sc-period-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sc-navy);
+}
+
+.sc-period-meta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--sc-text-muted);
+  text-transform: uppercase;
+}
+
+.sc-timebar {
+  display: flex;
+  height: 54px;
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.sc-timebar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--sc-navy);
+}
+
+.sc-timebar-segment + .sc-timebar-segment {
+  border-left: 1.5px solid var(--sc-navy);
+}
+
+.sc-segment-green {
+  background-color: var(--sc-green);
+}
+
+.sc-segment-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-segment-yellow {
+  background-color: var(--sc-yellow);
+}
+
+.sc-legend {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.sc-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sc-navy);
+}
+
+.sc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sc-navy);
+  display: inline-block;
+}
+
+.sc-dot-green {
+  background-color: var(--sc-green);
+}
+
+.sc-dot-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-dot-yellow {
+  background-color: var(--sc-yellow);
+}
+
+.sc-divider {
+  border: none;
+  border-top: 1px solid #e2e7ef;
+  margin: 0 0 14px;
+}
+
+.sc-period-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--sc-text-muted);
+  margin: 0;
+}
+
+/* One sprint at a glance banner */
+.sc-sprint-glance {
+  padding: 26px 30px;
+}
+
+.sc-glance-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin: 0 0 18px;
+}
+
+.sc-glance-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .sc-glance-steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sc-step-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+}
+
+.sc-step-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 14px;
+}
+
+.sc-bg-yellow {
+  background-color: var(--sc-yellow);
+}
+
+.sc-bg-green {
+  background-color: var(--sc-green);
+}
+
+.sc-bg-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-bg-coral {
+  background-color: var(--sc-coral);
+}
+
+.sc-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-navy);
+  flex-shrink: 0;
+}
+
+.sc-step-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  line-height: 1.25;
+}
+
+.sc-step-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(15, 28, 46, 0.72);
+  margin-top: 2px;
+}
+
+.sc-step-arrow {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sc-text-muted);
+  flex-shrink: 0;
+}
