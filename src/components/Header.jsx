@@ -7,7 +7,7 @@ export default function Header() {
         <a className="logo" href="/">Scrum 4 edu</a>
         <nav aria-label="Main">
           <a href="#benefits">Benefits</a>
-          <a href="#start">Start</a>
+          <a href="#interactive-guide">Start</a>
         </nav>
       </div>
     </header>
