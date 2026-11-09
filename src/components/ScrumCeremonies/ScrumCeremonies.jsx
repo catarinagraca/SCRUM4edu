@@ -14,35 +14,6 @@ export default function ScrumCeremonies() {
 
   return (
     <div className="scrum-ceremonies-page">
-      {/* Top Navbar */}
-      <header className="sc-navbar">
-        <div className="sc-container sc-navbar-inner">
-          <a href="#top" className="sc-logo">
-            Scrum<span>4</span>edu
-          </a>
-          <nav className="sc-nav-links">
-            <a
-              href="#ceremonies"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('ceremonies');
-              }}
-            >
-              Ceremonies
-            </a>
-            <a
-              href="#cheat-sheet"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('cheat-sheet');
-              }}
-            >
-              Cheat-sheet
-            </a>
-          </nav>
-        </div>
-      </header>
-
       <main className="sc-container">
         <CeremoniesHero onNavigate={scrollToSection} />
         <CeremoniesTabs />

@@ -24,7 +24,7 @@ export default function CeremoniesHero({ onNavigate }) {
             <button
               type="button"
               className="sc-btn sc-btn-primary"
-              onClick={() => onNavigate('ceremonies')}
+              onClick={() => onNavigate('ceremonies-tabs')}
             >
               Start with the stand-up <span className="sc-arrow">→</span>
             </button>

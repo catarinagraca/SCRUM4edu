@@ -5,7 +5,7 @@ export default function CeremoniesTabs() {
   const [retroTemplate, setRetroTemplate] = useState('start-stop-continue');
 
   return (
-    <section className="sc-ceremonies-section" id="ceremonies">
+    <section className="sc-ceremonies-section" id="ceremonies-tabs">
       <h2 className="sc-section-title">The three classroom ceremonies</h2>
 
       {/* Tab selector buttons */}
