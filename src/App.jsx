@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
+import ScrumCeremonies from "./components/ScrumCeremonies/ScrumCeremonies";
 import InteractiveGuide from "./components/InteractiveGuide";
 import "./App.css";
 
@@ -18,13 +19,21 @@ function useHash() {
 
 export default function App() {
   const hash = useHash();
+  const showCeremonies = hash === "#ceremonies";
+
+  useEffect(() => {
+    if (showCeremonies || !hash) {
+      window.scrollTo(0, 0);
+    } else {
+      document.querySelector(hash)?.scrollIntoView();
+    }
+  }, [hash, showCeremonies]);
   const showGuide = hash === "#interactive-guide";
 
   useEffect(() => {
     if (showGuide || !hash) {
       window.scrollTo(0, 0);
     } else {
-      // ex.: clicar em "Benefits" a partir do guia -> volta à home e faz scroll até à secção
       document.querySelector(hash)?.scrollIntoView();
     }
   }, [hash, showGuide]);
@@ -32,6 +41,9 @@ export default function App() {
   return (
     <>
       <Header />
+      {showCeremonies ? (
+        <ScrumCeremonies />
+       ) : (
       {showGuide ? (
         <InteractiveGuide />
       ) : (
