@@ -1,0 +1,799 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.scrum-ceremonies-page {
+  --sc-navy: #0f1c2e;
+  --sc-text-muted: #5a6779;
+  --sc-bg: #f8f9fb;
+  --sc-white: #ffffff;
+  --sc-yellow: #ffd15c;
+  --sc-green: #8ae5b6;
+  --sc-blue: #b4cbff;
+  --sc-coral: #ff9c97;
+  --sc-card-bg-subtle: #f1f4f8;
+
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--sc-navy);
+  background-color: var(--sc-bg);
+  min-height: 100vh;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.scrum-ceremonies-page *,
+.scrum-ceremonies-page *::before,
+.scrum-ceremonies-page *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.sc-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+.sc-navbar {
+  border-bottom: 1.5px solid var(--sc-navy);
+  background-color: var(--sc-bg);
+}
+
+.sc-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.sc-logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  text-decoration: none;
+  letter-spacing: -0.4px;
+}
+
+.sc-logo span {
+  color: #6b7b93;
+  font-weight: 700;
+}
+
+.sc-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.sc-nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sc-navy);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.sc-nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Shared brutalist card shadow */
+.sc-card-shadow {
+  background: var(--sc-white);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 18px;
+  box-shadow: 5px 5px 0px var(--sc-navy);
+}
+
+/* SECTION 1: Hero & Overview */
+.sc-hero-section {
+  padding: 72px 0 88px;
+}
+
+.sc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 68px;
+}
+
+@media (max-width: 860px) {
+  .sc-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.sc-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--sc-text-muted);
+  margin: 0 0 14px;
+}
+
+.sc-hero-title {
+  font-size: 54px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.6px;
+  color: var(--sc-navy);
+  margin: 0 0 22px;
+}
+
+@media (max-width: 640px) {
+  .sc-hero-title {
+    font-size: 38px;
+  }
+}
+
+.sc-hero-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--sc-text-muted);
+  margin: 0 0 24px;
+  max-width: 540px;
+}
+
+.sc-hero-description strong {
+  color: var(--sc-navy);
+  font-weight: 700;
+}
+
+/* Small Pills */
+.sc-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.sc-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1.5px solid var(--sc-navy);
+  color: var(--sc-navy);
+}
+
+.sc-pill-yellow {
+  background-color: var(--sc-yellow);
+}
+.sc-pill-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-pill-green {
+  background-color: var(--sc-green);
+}
+
+.sc-pill-coral {
+  background-color: var(--sc-coral);
+}
+
+/* CTA Buttons */
+.sc-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.sc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 999px;
+  border: 1.5px solid var(--sc-navy);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.sc-btn-primary {
+  background-color: var(--sc-navy);
+  color: var(--sc-white);
+}
+
+.sc-btn-primary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px rgba(15, 28, 46, 0.35);
+}
+
+.sc-btn-secondary {
+  background-color: var(--sc-white);
+  color: var(--sc-navy);
+  box-shadow: 3px 3px 0px var(--sc-navy);
+}
+
+.sc-btn-secondary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--sc-navy);
+}
+
+.sc-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Right Card: One 45-minute period */
+.sc-period-card {
+  padding: 26px 28px;
+}
+
+.sc-period-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sc-period-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sc-navy);
+}
+
+.sc-period-meta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--sc-text-muted);
+  text-transform: uppercase;
+}
+
+.sc-timebar {
+  display: flex;
+  height: 54px;
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.sc-timebar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--sc-navy);
+}
+
+.sc-timebar-segment + .sc-timebar-segment {
+  border-left: 1.5px solid var(--sc-navy);
+}
+
+.sc-segment-green {
+  background-color: var(--sc-green);
+}
+
+.sc-segment-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-segment-yellow {
+  background-color: var(--sc-yellow);
+}
+
+.sc-legend {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.sc-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sc-navy);
+}
+
+.sc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sc-navy);
+  display: inline-block;
+}
+
+.sc-dot-green {
+  background-color: var(--sc-green);
+}
+
+.sc-dot-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-dot-yellow {
+  background-color: var(--sc-yellow);
+}
+
+.sc-divider {
+  border: none;
+  border-top: 1px solid #e2e7ef;
+  margin: 0 0 14px;
+}
+
+.sc-period-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--sc-text-muted);
+  margin: 0;
+}
+
+/* One sprint at a glance banner */
+.sc-sprint-glance {
+  padding: 26px 30px;
+}
+
+.sc-glance-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin: 0 0 18px;
+}
+
+.sc-glance-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media (max-width: 860px) {
+  .sc-glance-steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sc-step-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+}
+
+.sc-step-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 14px;
+}
+
+.sc-bg-yellow {
+  background-color: var(--sc-yellow);
+}
+
+.sc-bg-green {
+  background-color: var(--sc-green);
+}
+
+.sc-bg-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-bg-coral {
+  background-color: var(--sc-coral);
+}
+
+.sc-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-navy);
+  flex-shrink: 0;
+}
+
+.sc-step-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  line-height: 1.25;
+}
+
+.sc-step-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(15, 28, 46, 0.72);
+  margin-top: 2px;
+}
+
+.sc-step-arrow {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sc-text-muted);
+  flex-shrink: 0;
+}
+
+/* SECTION 2: The three classroom ceremonies */
+.sc-ceremonies-section {
+  padding: 56px 0 96px;
+}
+
+.sc-section-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--sc-navy);
+  margin: 0 0 24px;
+}
+
+@media (max-width: 640px) {
+  .sc-section-title {
+    font-size: 28px;
+  }
+}
+
+/* Ceremony Tab Buttons */
+.sc-ceremony-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sc-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 14px;
+  border: 1.5px solid var(--sc-navy);
+  color: var(--sc-navy);
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.sc-tab-green {
+  background-color: var(--sc-green);
+}
+
+.sc-tab-blue {
+  background-color: var(--sc-blue);
+}
+
+.sc-tab-coral {
+  background-color: var(--sc-coral);
+}
+
+.sc-tab-btn.is-active {
+  background-color: var(--sc-navy);
+  color: var(--sc-white);
+}
+
+.sc-tab-btn:hover:not(.is-active) {
+  transform: translateY(-1px);
+}
+
+/* Main Ceremony Panel Card */
+.sc-ceremony-panel {
+  padding: 36px 38px;
+}
+
+@media (max-width: 640px) {
+  .sc-ceremony-panel {
+    padding: 24px 20px;
+  }
+}
+
+.sc-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sc-mini-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: var(--sc-navy);
+}
+
+.sc-panel-lead {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #2f3b4c;
+  margin: 0 0 28px;
+  max-width: 880px;
+}
+
+.sc-panel-lead strong {
+  color: var(--sc-navy);
+  font-weight: 700;
+}
+
+.sc-sub-heading {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin: 0 0 16px;
+}
+
+.sc-sub-heading.sc-no-margin {
+  margin: 0;
+}
+
+/* 3-Column Sub Cards */
+.sc-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 820px) {
+  .sc-three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sc-sub-card {
+  background-color: var(--sc-card-bg-subtle);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 14px;
+  padding: 22px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-sub-card-white {
+  background-color: var(--sc-white);
+}
+
+/* Stand-up Question Cards */
+.sc-question-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.sc-question-text {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.48;
+  color: var(--sc-navy);
+  margin: 0;
+}
+
+/* Review Format Cards */
+.sc-format-time {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 6px;
+}
+
+.sc-format-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 8px;
+}
+
+.sc-format-desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--sc-text-muted);
+  margin: 0;
+}
+
+/* Retrospective Template Switcher & Columns */
+.sc-retro-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sc-template-switch {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--sc-card-bg-subtle);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.sc-switch-opt {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--sc-navy);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sc-switch-opt.is-active {
+  background-color: var(--sc-navy);
+  color: var(--sc-white);
+}
+
+.sc-retro-col-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 4px;
+}
+
+.sc-retro-col-sub {
+  font-size: 13px;
+  color: var(--sc-text-muted);
+  margin-bottom: 16px;
+}
+
+.sc-retro-example {
+  margin-top: auto;
+  background-color: var(--sc-green);
+  color: var(--sc-navy);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 9px;
+}
+
+/* Callout / Pro-Tip Cards */
+.sc-callout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.sc-callout-grid.sc-callout-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 820px) {
+  .sc-callout-grid.sc-callout-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sc-callout-card {
+  background-color: var(--sc-yellow);
+  border: 1.5px solid var(--sc-navy);
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 4px 4px 0px var(--sc-navy);
+}
+
+.sc-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  margin-bottom: 10px;
+}
+
+.sc-callout-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(15, 28, 46, 0.85);
+  margin: 0;
+}
+
+.sc-callout-text strong {
+  color: var(--sc-navy);
+  font-weight: 700;
+}
+
+/* SECTION 3: Teacher's quick cheat-sheet */
+.sc-cheatsheet-section {
+  padding: 48px 0 112px;
+}
+
+.sc-table-card {
+  overflow: hidden;
+}
+
+.sc-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.sc-cheatsheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 680px;
+}
+
+.sc-cheatsheet-table thead tr {
+  background-color: var(--sc-card-bg-subtle);
+  border-bottom: 1.5px solid #dce2ec;
+}
+
+.sc-cheatsheet-table th {
+  padding: 18px 24px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--sc-navy);
+}
+
+.sc-cheatsheet-table tbody tr + tr {
+  border-top: 1px solid #e5e9f0;
+}
+
+.sc-cheatsheet-table td {
+  padding: 22px 24px;
+  vertical-align: middle;
+}
+
+.sc-table-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: var(--sc-navy);
+  white-space: nowrap;
+}
+
+.sc-td-time {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--sc-navy);
+  white-space: nowrap;
+}
+
+.sc-td-focus {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--sc-navy);
+  white-space: nowrap;
+}
+
+.sc-td-goal {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--sc-text-muted);
+  line-height: 1.45;
+}
+
+/* Footer */
+.sc-footer {
+  border-top: 1.5px solid var(--sc-navy);
+  background-color: var(--sc-bg);
+}
+
+.sc-footer-inner {
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sc-text-muted);
+}

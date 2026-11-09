@@ -1,0 +1,341 @@
+.guide {
+  --navy: #1d2340;
+  --yellow: #ffd166;
+  --mint: #9fe3cf;
+  --salmon: #ffb3a7;
+
+  min-height: 100vh;
+  padding: 3rem 1.25rem 5rem;
+  color: var(--navy);
+  background: linear-gradient(180deg, #fbfbfe 0%, #e8edfc 100%);
+}
+
+/* Reading progress bar */
+.guide-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--salmon), var(--yellow), var(--mint));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* Header */
+.guide-header {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem;
+}
+
+.guide-time {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.guide-header h1 {
+  margin: 0.5rem 0;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.guide-squiggle {
+  text-decoration: underline wavy var(--salmon);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 10px;
+}
+
+.guide-subtitle {
+  max-width: 640px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* Cards: two columns, read left to right, top to bottom */
+.guide-body {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.75rem;
+  align-items: start;
+}
+
+.guide-card {
+  position: relative;
+  padding: 1.4rem 1.4rem 1.25rem;
+  border: 2px solid var(--navy);
+  border-radius: 16px;
+  box-shadow: 5px 5px 0 var(--navy);
+
+  /* start hidden, slide in when visible */
+  opacity: 0;
+  transform: translateY(30px) rotate(var(--tilt, 0deg));
+  transition:
+    opacity 0.6s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.guide-card:nth-child(odd) {
+  --tilt: -0.8deg;
+}
+.guide-card:nth-child(even) {
+  --tilt: 0.8deg;
+}
+
+.guide-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--tilt, 0deg));
+}
+
+.guide-card.is-visible:hover {
+  transform: translateY(-6px) rotate(0deg);
+  box-shadow: 9px 11px 0 var(--navy);
+}
+
+/* A piece of tape on top, like a sticky note on a wall */
+.guide-card::before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 70px;
+  height: 22px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(29, 35, 64, 0.15);
+}
+
+.guide-card--yellow {
+  background: var(--yellow);
+}
+.guide-card--mint {
+  background: var(--mint);
+}
+.guide-card--salmon {
+  background: var(--salmon);
+}
+
+.guide-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guide-number {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.guide-emoji {
+  display: inline-block;
+  font-size: 2.2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.guide-card:hover .guide-emoji {
+  animation: wobble 0.6s ease;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+  25% {
+    transform: rotate(-15deg) scale(1.25);
+  }
+  75% {
+    transform: rotate(15deg) scale(1.25);
+  }
+}
+
+.guide-card h2 {
+  margin: 0.6rem 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.guide-card p {
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.guide-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlighter-pen effect on key words */
+.guide-card mark {
+  background: linear-gradient(transparent 55%, rgba(255, 255, 255, 0.9) 55%);
+  color: inherit;
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+/* Teacher-only boxes (inside each card) */
+.guide-pause {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border: 2px dashed var(--navy);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.guide-pause p {
+  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Animated mini board */
+.mini-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 1rem 0 0.4rem;
+  padding: 0.6rem;
+  background: #fff;
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+}
+
+.mini-col {
+  min-height: 150px;
+  padding: 0.4rem;
+  background: #f4f5fb;
+  border-radius: 8px;
+}
+
+.mini-col-title {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.mini-note {
+  margin-bottom: 0.4rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  animation: pop 0.4s ease;
+}
+
+.mini-note small {
+  display: block;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.mini-note--yellow {
+  background: var(--yellow);
+}
+.mini-note--mint {
+  background: var(--mint);
+}
+.mini-note--salmon {
+  background: var(--salmon);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.6) translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Footer + confetti */
+.guide-footer {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.guide-celebrate {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.8rem 1.6rem;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--navy);
+  border: none;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--salmon);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.guide-celebrate:hover {
+  transform: translateY(-3px) rotate(-1deg);
+}
+
+.confetti-piece {
+  position: fixed;
+  top: -2.5rem;
+  font-size: 1.8rem;
+  pointer-events: none;
+  z-index: 200;
+  animation: fall 2.8s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(115vh) rotate(540deg);
+  }
+}
+
+/* Small screens: one column */
+@media (max-width: 800px) {
+  .guide-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Respect people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .guide-card,
+  .guide-card.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .guide-emoji,
+  .mini-note,
+  .confetti-piece {
+    animation: none;
+  }
+}
