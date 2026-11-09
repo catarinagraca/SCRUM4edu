@@ -5,6 +5,7 @@ import Benefits from "./components/Benefits";
 import ScrumCeremonies from "./components/ScrumCeremonies/ScrumCeremonies";
 import InteractiveGuide from "./components/InteractiveGuide";
 import IntroGuide from "./components/IntroGuide";
+import Glossary from "./components/Glossary";
 import "./App.css";
 
 // Navegação simples por hash (#interactive-guide), sem precisar de router
@@ -23,14 +24,15 @@ export default function App() {
   const showCeremonies = hash === "#ceremonies";
   const showGuide = hash === "#interactive-guide";
   const showIntro = hash === "#intro-guide";
+  const showGlossary = hash === "#glossary";
 
   useEffect(() => {
-    if (showCeremonies || showGuide || showIntro|| !hash) {
+    if (showCeremonies || showGuide || showIntro || showGlossary || !hash) {
       window.scrollTo(0, 0);
     } else {
       document.querySelector(hash)?.scrollIntoView();
     }
-  }, [hash, showGuide, showIntro]);
+  }, [hash, showGuide, showIntro, showGlossary]);
 
   return (
     <>
@@ -41,6 +43,8 @@ export default function App() {
         <InteractiveGuide />
       ) : showIntro ? (
         <IntroGuide />
+      ) : showGlossary ? (
+        <Glossary />
       ) : (
         <main>
           <Hero />
