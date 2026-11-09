@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import SprintBoard from "./SprintBoard";
+import "./css/Hero.css"; 
 
 export default function Hero() {
   return (
@@ -15,7 +16,7 @@ export default function Hero() {
             teaching.
           </p>
           <div className="actions">
-            <a className="btn primary" href="#start">
+            <a className="btn primary" href="#interactive-guide">
               Start the free course <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a className="btn ghost" href="#benefits">See the benefits</a>

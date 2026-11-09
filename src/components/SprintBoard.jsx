@@ -1,3 +1,5 @@
+import "./css/SprintBoard.css";
+
 const board = [
   { column: "To do", notes: [{ text: "Research sources", who: "Ana" }] },
   {
