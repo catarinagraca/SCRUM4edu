@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.grading-evaluation-page {
+  --ge-navy: #0f1c2e;
+  --ge-text-muted: #5a6779;
+  --ge-bg: #f8f9fb;
+  --ge-white: #ffffff;
+  --ge-yellow: #ffd15c;
+  --ge-green: #8ae5b6;
+  --ge-blue: #b4cbff;
+  --ge-coral: #ff9c97;
+  --ge-card-bg-subtle: #f1f4f8;
+
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ge-navy);
+  background-color: var(--ge-bg);
+  min-height: 100vh;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grading-evaluation-page *,
+.grading-evaluation-page *::before,
+.grading-evaluation-page *::after {
+  box-sizing: border-box;
+}
+
+.ge-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Shared brutalist card shadow */
+.ge-card-shadow {
+  background: var(--ge-white);
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 18px;
+  box-shadow: 5px 5px 0px var(--ge-navy);
+}
+
+/* Color utility classes */
+.ge-bg-yellow {
+  background-color: var(--ge-yellow);
+}
+.ge-bg-green {
+  background-color: var(--ge-green);
+}
+.ge-bg-blue {
+  background-color: var(--ge-blue);
+}
+.ge-bg-coral {
+  background-color: var(--ge-coral);
+}
+
+/* HERO SECTION */
+.ge-hero-section {
+  padding: 68px 0 64px;
+}
+
+.ge-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .ge-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.ge-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ge-text-muted);
+  margin: 0 0 12px;
+}
+
+.ge-hero-title {
+  font-size: 50px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--ge-navy);
+  margin: 0 0 20px;
+}
+
+@media (max-width: 640px) {
+  .ge-hero-title {
+    font-size: 36px;
+  }
+}
+
+.ge-hero-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ge-text-muted);
+  margin: 0 0 22px;
+  max-width: 540px;
+}
+
+.ge-hero-description strong {
+  color: var(--ge-navy);
+  font-weight: 700;
+}
+
+/* Pills */
+.ge-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.ge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1.5px solid var(--ge-navy);
+  color: var(--ge-navy);
+}
+
+.ge-pill-yellow {
+  background-color: var(--ge-yellow);
+}
+.ge-pill-green {
+  background-color: var(--ge-green);
+}
+.ge-pill-coral {
+  background-color: var(--ge-coral);
+}
+
+/* CTA Buttons */
+.ge-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.ge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 999px;
+  border: 1.5px solid var(--ge-navy);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.ge-btn-primary {
+  background-color: var(--ge-navy);
+  color: var(--ge-white);
+}
+
+.ge-btn-primary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px rgba(15, 28, 46, 0.35);
+}
+
+.ge-btn-secondary {
+  background-color: var(--ge-white);
+  color: var(--ge-navy);
+  box-shadow: 3px 3px 0px var(--ge-navy);
+}
+
+.ge-btn-secondary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--ge-navy);
+}
+
+.ge-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Right Formula Card */
+.ge-formula-card {
+  padding: 26px 28px;
+}
+
+.ge-formula-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ge-formula-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ge-navy);
+}
+
+.ge-formula-meta {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: var(--ge-text-muted);
+  text-transform: uppercase;
+}
+
+.ge-splitbar {
+  display: flex;
+  height: 50px;
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.ge-splitbar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--ge-navy);
+}
+
+.ge-splitbar-segment + .ge-splitbar-segment {
+  border-left: 1.5px solid var(--ge-navy);
+}
+
+.ge-formula-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ge-breakdown-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ge-navy);
+}
+
+.ge-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ge-navy);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ge-divider {
+  border: none;
+  border-top: 1px solid #e2e7ef;
+  margin: 0 0 12px;
+}
+
+.ge-formula-caption {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ge-text-muted);
+  margin: 0;
+}
+
+/* SECTIONS */
+.ge-section {
+  padding: 44px 0 64px;
+}
+
+.ge-section-header {
+  margin-bottom: 28px;
+}
+
+.ge-step-pill {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1.5px solid var(--ge-navy);
+  margin-bottom: 12px;
+}
+
+.ge-section-title {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.9px;
+  color: var(--ge-navy);
+  margin: 0 0 12px;
+}
+
+@media (max-width: 640px) {
+  .ge-section-title {
+    font-size: 26px;
+  }
+}
+
+.ge-section-lead {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--ge-text-muted);
+  max-width: 780px;
+  margin: 0;
+}
+
+.ge-section-lead strong {
+  color: var(--ge-navy);
+}
+
+/* 4-Card Suggestions Grid */
+.ge-four-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 760px) {
+  .ge-four-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ge-rule-card {
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ge-rule-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1.5px solid var(--ge-navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.ge-rule-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin: 0 0 8px;
+}
+
+.ge-rule-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ge-text-muted);
+  margin: 0;
+}
+
+.ge-rule-text strong {
+  color: var(--ge-navy);
+}
+
+/* Interactive Kanban Audit Demo */
+.ge-audit-panel {
+  padding: 30px 32px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .ge-audit-panel {
+    padding: 22px 18px;
+  }
+}
+
+.ge-audit-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ge-sub-heading {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin: 0 0 6px;
+}
+
+.ge-sub-heading.ge-no-margin {
+  margin: 0 0 4px;
+}
+
+.ge-audit-sub {
+  font-size: 13.5px;
+  color: var(--ge-text-muted);
+  margin: 0;
+}
+
+.ge-student-filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: var(--ge-card-bg-subtle);
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.ge-filter-btn {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ge-navy);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ge-filter-btn.is-active {
+  background-color: var(--ge-navy);
+  color: var(--ge-white);
+}
+
+.ge-kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 820px) {
+  .ge-kanban-board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ge-kanban-col {
+  background: var(--ge-card-bg-subtle);
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 14px;
+  padding: 14px;
+  min-height: 220px;
+}
+
+.ge-kanban-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.ge-col-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--ge-white);
+  border: 1.5px solid var(--ge-navy);
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+.ge-kanban-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ge-kanban-card {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--ge-navy);
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ge-note-yellow {
+  background-color: var(--ge-yellow);
+}
+.ge-note-green {
+  background-color: var(--ge-green);
+}
+.ge-note-blue {
+  background-color: var(--ge-blue);
+}
+.ge-note-coral {
+  background-color: var(--ge-coral);
+}
+
+.ge-kanban-card.is-dimmed {
+  opacity: 0.25;
+  transform: scale(0.98);
+}
+
+.ge-kanban-card.is-highlighted {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px var(--ge-navy);
+}
+
+.ge-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.ge-card-owner {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--ge-navy);
+}
+
+.ge-card-effort {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ge-navy);
+}
+
+.ge-card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.ge-card-evidence {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(15, 28, 46, 0.8);
+}
+
+.ge-diagnosis-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--ge-card-bg-subtle);
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 12px;
+}
+
+.ge-diagnosis-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ge-navy);
+  margin: 0;
+  flex: 1;
+  min-width: 240px;
+}
+
+/* Method Tabs & Panel (Part 2) */
+.ge-method-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ge-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 14px;
+  border: 1.5px solid var(--ge-navy);
+  color: var(--ge-navy);
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.ge-tab-green {
+  background-color: var(--ge-green);
+}
+.ge-tab-blue {
+  background-color: var(--ge-blue);
+}
+.ge-tab-coral {
+  background-color: var(--ge-coral);
+}
+
+.ge-tab-btn.is-active {
+  background-color: var(--ge-navy);
+  color: var(--ge-white);
+}
+
+.ge-tab-btn:hover:not(.is-active) {
+  transform: translateY(-1px);
+}
+
+.ge-method-panel {
+  padding: 34px 36px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .ge-method-panel {
+    padding: 24px 20px;
+  }
+}
+
+.ge-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.ge-mini-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid var(--ge-navy);
+  color: var(--ge-navy);
+}
+
+.ge-panel-lead {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #2f3b4c;
+  margin: 0 0 24px;
+  max-width: 860px;
+}
+
+.ge-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 820px) {
+  .ge-three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ge-sub-card {
+  background-color: var(--ge-card-bg-subtle);
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ge-sub-card-white {
+  background-color: var(--ge-white);
+}
+
+.ge-retro-col-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin-bottom: 6px;
+}
+
+.ge-retro-col-sub {
+  font-size: 13px;
+  color: var(--ge-text-muted);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+.ge-retro-example {
+  margin-top: auto;
+  color: var(--ge-navy);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+  padding: 10px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--ge-navy);
+}
+
+.ge-question-num {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin-bottom: 10px;
+}
+
+.ge-question-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ge-navy);
+  margin: 0;
+}
+
+.ge-format-time {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin-bottom: 6px;
+}
+
+.ge-format-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin-bottom: 8px;
+}
+
+.ge-format-desc {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ge-text-muted);
+  margin: 0;
+}
+
+/* Callout / Pro-Tip Cards */
+.ge-callout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ge-callout-grid.ge-callout-two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 820px) {
+  .ge-callout-grid.ge-callout-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ge-callout-card {
+  background-color: var(--ge-yellow);
+  border: 1.5px solid var(--ge-navy);
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 4px 4px 0px var(--ge-navy);
+}
+
+.ge-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  margin-bottom: 10px;
+}
+
+.ge-callout-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(15, 28, 46, 0.85);
+  margin: 0;
+}
+
+/* Rubric Table */
+.ge-rubric-block {
+  margin-top: 64px;
+}
+
+.ge-table-card {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.ge-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ge-rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 680px;
+}
+
+.ge-rubric-table thead tr {
+  background-color: var(--ge-card-bg-subtle);
+  border-bottom: 1.5px solid #dce2ec;
+}
+
+.ge-rubric-table th {
+  padding: 18px 24px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--ge-navy);
+}
+
+.ge-rubric-table tbody tr + tr {
+  border-top: 1px solid #e5e9f0;
+}
+
+.ge-rubric-table td {
+  padding: 22px 24px;
+  vertical-align: middle;
+}
+
+.ge-table-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: var(--ge-navy);
+  white-space: nowrap;
+}
+
+.ge-td-weight {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ge-navy);
+  white-space: nowrap;
+}
+
+.ge-td-source {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ge-navy);
+}
+
+.ge-td-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ge-text-muted);
+  line-height: 1.45;
+}
+
+/* Footer */
+.ge-footer {
+  border-top: 1.5px solid var(--ge-navy);
+  background-color: var(--ge-bg);
+}
+
+.ge-footer-inner {
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ge-text-muted);
+}

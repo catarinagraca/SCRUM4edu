@@ -6,6 +6,7 @@ import ScrumCeremonies from "./components/ScrumCeremonies/ScrumCeremonies";
 import InteractiveGuide from "./components/InteractiveGuide";
 import IntroGuide from "./components/IntroGuide";
 import Glossary from "./components/Glossary";
+import GradingEvaluation from "./components/GradingEvaluation/GradingEvaluation";
 import "./App.css";
 
 // Navegação simples por hash (#interactive-guide), sem precisar de router
@@ -25,14 +26,22 @@ export default function App() {
   const showGuide = hash === "#interactive-guide";
   const showIntro = hash === "#intro-guide";
   const showGlossary = hash === "#glossary";
+  const showGrading = hash === "#grading";
 
   useEffect(() => {
-    if (showCeremonies || showGuide || showIntro || showGlossary || !hash) {
+    if (
+      showCeremonies ||
+      showGuide ||
+      showIntro ||
+      showGlossary ||
+      showGrading ||
+      !hash
+    ) {
       window.scrollTo(0, 0);
     } else {
       document.querySelector(hash)?.scrollIntoView();
     }
-  }, [hash, showGuide, showIntro, showGlossary]);
+  }, [hash, showCeremonies, showGuide, showIntro, showGlossary, showGrading]);
 
   return (
     <>
@@ -45,6 +54,8 @@ export default function App() {
         <IntroGuide />
       ) : showGlossary ? (
         <Glossary />
+      ) : showGrading ? (
+        <GradingEvaluation />
       ) : (
         <main>
           <Hero />
