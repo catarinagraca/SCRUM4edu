@@ -20,6 +20,11 @@ function useHash() {
   return hash;
 }
 
+// Muda de página alterando o hash
+const go = (hash) => {
+  window.location.hash = hash;
+};
+
 export default function App() {
   const hash = useHash();
   const showCeremonies = hash === "#ceremonies";
@@ -46,16 +51,19 @@ export default function App() {
   return (
     <>
       <Header />
-      {showCeremonies ? (
-        <ScrumCeremonies />
+      {showIntro ? (
+        <IntroGuide onNext={() => go("#ceremonies")} />
+      ) : showCeremonies ? (
+        <ScrumCeremonies onNext={() => go("#interactive-guide")} />
       ) : showGuide ? (
-        <InteractiveGuide />
-      ) : showIntro ? (
-        <IntroGuide />
+        <InteractiveGuide
+          onBack={() => go("#ceremonies")}
+          onNext={() => go("#grading")}
+        />
+      ) : showGrading ? (
+        <GradingEvaluation onBack={() => go("#interactive-guide")} />
       ) : showGlossary ? (
         <Glossary />
-      ) : showGrading ? (
-        <GradingEvaluation />
       ) : (
         <main>
           <Hero />

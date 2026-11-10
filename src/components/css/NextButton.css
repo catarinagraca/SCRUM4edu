@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+.nav-btn-row {
+  display: flex;
+  width: 100%;
+  margin: 40px 0 56px;
+}
+
+.nav-btn-row--end {
+  justify-content: flex-end;
+}
+
+.nav-btn-row--start {
+  justify-content: flex-start;
+  margin: 24px 0 0;
+}
+
+.nav-btn-row--center {
+  justify-content: center;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 999px;
+  border: 1.5px solid #0f1c2e;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.nav-btn--next {
+  background-color: #0f1c2e;
+  color: #ffffff;
+  box-shadow: 4px 4px 0 #ffd15c;
+}
+
+.nav-btn--next:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #ffd15c;
+}
+
+.nav-btn--back {
+  background-color: #ffffff;
+  color: #0f1c2e;
+  box-shadow: 3px 3px 0 #0f1c2e;
+}
+
+.nav-btn--back:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #0f1c2e;
+}
+
+.nav-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 1px 1px 0 #0f1c2e;
+}
+
+.nav-btn:focus-visible {
+  outline: 3px solid #b4cbff;
+  outline-offset: 3px;
+}
+
+.nav-btn-arrow {
+  font-size: 18px;
+  line-height: 1;
+}
