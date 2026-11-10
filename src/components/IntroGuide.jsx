@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './css/IntroGuide.css'
+import NextButton from './NextButton'
 
 const WORDS_PER_MINUTE = 130
 const SECONDS_PER_PAUSE = 30
@@ -172,7 +173,7 @@ function MiniBoard() {
   )
 }
 
-function IntroGuide() {
+function IntroGuide({ onNext }) {
   const [progress, setProgress] = useState(0)
   const [confetti, setConfetti] = useState([])
 
@@ -276,6 +277,9 @@ function IntroGuide() {
         <button type="button" className="guide-celebrate" onClick={celebrate}>
           🎉 Mission accepted!
         </button>
+        {onNext && (
+          <NextButton label="Next: Scrum ceremonies" onClick={onNext} align="center" />
+        )}
         {confetti.map((c) => (
           <span
             key={c.id}
@@ -291,4 +295,3 @@ function IntroGuide() {
 }
 
 export default IntroGuide
-

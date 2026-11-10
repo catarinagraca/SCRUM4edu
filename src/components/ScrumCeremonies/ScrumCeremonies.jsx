@@ -3,8 +3,9 @@ import CeremoniesHero from './CeremoniesHero';
 import CeremoniesTabs from './CeremoniesTabs';
 import CeremoniesCheatSheet from './CeremoniesCheatSheet';
 import './ScrumCeremonies.css';
+import NextButton from '../NextButton';
 
-export default function ScrumCeremonies() {
+export default function ScrumCeremonies({ onNext }) {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -18,6 +19,8 @@ export default function ScrumCeremonies() {
         <CeremoniesHero onNavigate={scrollToSection} />
         <CeremoniesTabs />
         <CeremoniesCheatSheet />
+
+        {onNext && <NextButton label="Next: The learning cycle" onClick={onNext} />}
       </main>
 
       {/* Footer */}
