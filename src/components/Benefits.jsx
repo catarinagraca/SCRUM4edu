@@ -73,11 +73,19 @@ export default function Benefits() {
           <BenefitItem key={benefit.title} {...benefit} />
         ))}
       </motion.ul>
-      
 
       </div>
       <div className="benefits-right">
-      <BeforeAfterSlider />
+        <BeforeAfterSlider />
+        <div className="benefits-download-row">
+          <a
+            className="btn primary benefits-download"
+            href={`${import.meta.env.BASE_URL}Scrum4edu-Teachers-Starter-Kit.pdf`}
+            download="Scrum4edu-Teachers-Starter-Kit.pdf"
+          >
+            Download your Starter Kit
+          </a>
+        </div>
       </div>
       </div>
       
