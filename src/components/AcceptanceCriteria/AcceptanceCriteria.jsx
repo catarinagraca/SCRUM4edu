@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import BackButton from '../BackButton';
 import NextButton from '../NextButton';
-import { loadUserStory } from '../UserStory/userStoryStorage';
+import { loadUserStory } from '../UserStory/UserStoryStorage';
 import './AcceptanceCriteria.css';
 
 // Os três campos de cada critério (AC1)
