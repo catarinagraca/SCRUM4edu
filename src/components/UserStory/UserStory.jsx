@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BackButton from '../BackButton';
 import NextButton from '../NextButton';
-import { loadUserStory, saveUserStory } from './userStoryStorage';
+import { loadUserStory, saveUserStory } from './UserStoryStorage';
 import './UserStory.css';
 
 // AC1 + AC2: três campos editáveis, cada um com placeholder de exemplo

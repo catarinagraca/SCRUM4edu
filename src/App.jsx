@@ -9,10 +9,11 @@ import InteractiveGuide from "./components/InteractiveGuide";
 import IntroGuide from "./components/IntroGuide";
 import Glossary from "./components/Glossary";
 import UserStory from "./components/UserStory/UserStory";
-import { clearUserStory } from "./components/UserStory/userStoryStorage";
+import { clearUserStory } from "./components/UserStory/UserStoryStorage.js";
 import AcceptanceCriteria from "./components/AcceptanceCriteria/AcceptanceCriteria";
 import GradingEvaluation from "./components/GradingEvaluation/GradingEvaluation";
-import { COURSE_STEPS } from "./courseSteps";
+import ClassroomFaq from "./components/ClassroomFaq";
+import { COURSE_STEPS } from './CourseSteps.js';
 import "./App.css";
 
 // Componente de cada etapa do curso (a ordem vem de COURSE_STEPS)
@@ -141,10 +142,13 @@ export default function App() {
       ) : showCheatSheet ? (
         <CheatSheetPage onBack={() => goBackFrom("#cheat-sheet")} />
       ) : (
-        <main>
-          <Hero />
-          <Benefits />
-        </main>
+        <>
+          <main>
+            <Hero />
+            <Benefits />
+          </main>
+          <ClassroomFaq />
+        </>
       )}
     </>
   );

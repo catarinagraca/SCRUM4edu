@@ -1,4 +1,4 @@
-import { COURSE_STEPS } from "../courseSteps";
+import { COURSE_STEPS } from "../CourseSteps";
 import "./css/Header.css";
 
 export default function Header() {
