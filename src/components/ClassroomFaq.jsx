@@ -55,6 +55,32 @@ const FAQ_SCENARIOS = [
     scrumMasterRole:
       "The Scrum Master's main job is removing obstacles. Through the third Daily Stand-up question (\"Do I have any blockers?\"), the Scrum Master normalizes asking for help and pairs the stuck student with a teammate for 10 minutes right after the stand-up.",
   },
+  {
+    id: "absent-teammate",
+    tag: "The Absent Student Bottleneck",
+    tagTone: "faq-tag-coral",
+    question:
+      "What if a student is absent on a key workday and the rest of the group claims they can't continue?",
+    scenario:
+      "One student stays home sick with the project notes on their laptop, and the other three students sit idle for the entire 45-minute period saying, \"We can't do anything without Leo's file.\"",
+    boardTransparency:
+      "Because all tasks are mapped on the shared Kanban board (and linked to a shared folder), the team can immediately see which cards in 'To Do' are independent of the absent student's task—or reassign an urgent 'Doing' card so progress never stalls.",
+    scrumMasterRole:
+      "At the start-of-class Stand-up, the Scrum Master spots the blocked card, helps the team pivot to unblocked backlog items for that period, and posts a quick update on the board so the absent student knows exactly where to jump back in upon returning.",
+  },
+  {
+    id: "cherry-picking",
+    tag: "The 'Easy-Task' Cherry-Picker",
+    tagTone: "faq-tag-yellow",
+    question:
+      "What if a student only grabs tiny, cosmetic tasks (like picking fonts) and claims they did equal work?",
+    scenario:
+      "A student moves three cards to 'Done'—'Choose color palette', 'Make title slide', and 'Create folder'—in 10 minutes, then relaxes while teammates spend hours writing the research report.",
+    boardTransparency:
+      "When cards on the Kanban board are tagged with relative effort sizes (S / M / L) during Sprint Planning, the board exposes the difference between three 5-minute 'S' tasks and a deep 'L' research task at a glance.",
+    scrumMasterRole:
+      "During Sprint Planning, the Scrum Master guides the team to balance total effort points—not just card count—across all members, and prompts the team in the Sprint Review to verify that every 'Done' card meets the agreed quality standard.",
+  },
 ];
 
 export default function ClassroomFaq() {
