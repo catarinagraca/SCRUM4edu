@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
 import backlog from "../assets/phase-backlog.jpg";
 import planning from "../assets/phase-planning.jpg";
 import sprint from "../assets/phase-sprint.jpg";
@@ -7,6 +6,8 @@ import daily from "../assets/phase-daily.jpg";
 import review from "../assets/phase-review.jpg";
 import retro from "../assets/phase-retro.jpg";
 import "./css/InteractiveGuide.css";
+import NextButton from "./NextButton";
+import BackButton from "./BackButton";
 
 const noteColors = ["var(--sticky)", "var(--sticky-2)", "var(--sticky-3)"];
 
@@ -18,19 +19,17 @@ const phases = [
   { title: "Show & Feedback", scrum: "Sprint Review", img: review, summary: "Teams show what they have finished, get feedback and decide together what comes next.", tips: ["Show real work, not just slides", "Invite peer and teacher feedback", "Update the backlog with new ideas"] },
   { title: "Group Reflection", scrum: "Sprint Retrospective", img: retro, summary: "The team reflects on how they worked together and chooses one thing to improve in the next sprint.", tips: ["Ask: what went well / what to change", "Pick one concrete action", "Celebrate progress"] },
 ];
-
+                                
 const R = 36; // raio do círculo (em % / unidades do viewBox)
 
-export default function InteractiveGuide() {
+export default function InteractiveGuide({ onBack, onNext, nextLabel = "Next: Acceptance criteria" }) {
   const [active, setActive] = useState(0);
   const p = phases[active];
 
   return (
     <main className="guide">
       <div className="guide-inner">
-        <a className="guide-back" href="#">
-          <ArrowLeft size={16} aria-hidden="true" /> Back
-        </a>
+        {onBack && <BackButton onClick={onBack} />}
         <h1>The 6-phase learning cycle.</h1>
         <p className="guide-lead">Pick a phase to see how it works in your classroom.</p>
 
@@ -119,6 +118,8 @@ export default function InteractiveGuide() {
             </div>
           </aside>
         </div>
+
+        {onNext && <NextButton label={nextLabel} onClick={onNext} />}
       </div>
     </main>
   );

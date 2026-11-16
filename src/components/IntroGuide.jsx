@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './css/IntroGuide.css'
+import NextButton from './NextButton'
+import BackButton from './BackButton'
 
 const WORDS_PER_MINUTE = 130
 const SECONDS_PER_PAUSE = 30
@@ -172,9 +174,8 @@ function MiniBoard() {
   )
 }
 
-function IntroGuide() {
+function IntroGuide({ onBack, onNext, nextLabel = 'Next: Scrum ceremonies' }) {
   const [progress, setProgress] = useState(0)
-  const [confetti, setConfetti] = useState([])
 
   // Reading time: spoken words + a little time for each pause activity.
   const spokenWords = sections.reduce(
@@ -214,22 +215,11 @@ function IntroGuide() {
     return () => observer.disconnect()
   }, [])
 
-  function celebrate() {
-    const emojis = ['🎉', '⭐', '🚀', '✨', '📋', '💡']
-    setConfetti(
-      Array.from({ length: 30 }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        delay: Math.random() * 0.8,
-        emoji: emojis[i % emojis.length],
-      })),
-    )
-    setTimeout(() => setConfetti([]), 3800)
-  }
-
   return (
     <main className="guide">
       <div className="guide-progress" style={{ width: `${progress}%` }} />
+
+      {onBack && <BackButton onClick={onBack} />}
 
       <header className="guide-header">
         <span className="guide-time">⏱ Estimated reading time: ~{minutes} min</span>
@@ -273,22 +263,12 @@ function IntroGuide() {
 
       <footer className="guide-footer">
         <p>That&apos;s it. Now it&apos;s their project.</p>
-        <button type="button" className="guide-celebrate" onClick={celebrate}>
-          🎉 Mission accepted!
-        </button>
-        {confetti.map((c) => (
-          <span
-            key={c.id}
-            className="confetti-piece"
-            style={{ left: `${c.left}%`, animationDelay: `${c.delay}s` }}
-          >
-            {c.emoji}
-          </span>
-        ))}
+        {onNext && (
+          <NextButton label={nextLabel} onClick={onNext} align="center" />
+        )}
       </footer>
     </main>
   )
 }
 
 export default IntroGuide
-

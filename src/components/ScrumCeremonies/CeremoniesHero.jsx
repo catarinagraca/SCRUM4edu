@@ -31,7 +31,7 @@ export default function CeremoniesHero({ onNavigate }) {
             <button
               type="button"
               className="sc-btn sc-btn-secondary"
-              onClick={() => onNavigate('cheat-sheet')}
+              onClick={() => (window.location.hash = '#cheat-sheet')}
             >
               See the cheat-sheet
             </button>
