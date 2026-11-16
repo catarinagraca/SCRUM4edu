@@ -38,21 +38,28 @@
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid #0f1c2e;
+  border-radius: 16px;
+  box-shadow: 5px 5px 0px #0f1c2e;
+  overflow: hidden;
 }
 
 .faq-item {
   background: #ffffff;
-  border: 1.5px solid #0f1c2e;
-  border-radius: 13px;
-  box-shadow: 3.5px 3.5px 0px #0f1c2e;
-  overflow: hidden;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: background-color 0.12s ease;
+}
+
+.faq-item + .faq-item {
+  border-top: 1.5px solid #0f1c2e;
 }
 
 .faq-item:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 4.5px 4.5px 0px #0f1c2e;
+  background-color: #f8f9fb;
+}
+
+.faq-item.is-open {
+  background-color: #ffffff;
 }
 
 .faq-question-btn {
