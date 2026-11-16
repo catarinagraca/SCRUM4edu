@@ -1,7 +1,9 @@
+import { COURSE_STEPS } from "../courseSteps";
 import "./css/Header.css";
 
 export default function Header() {
   const hash = typeof window !== "undefined" ? window.location.hash : "";
+  const inCourse = COURSE_STEPS.some((s) => s.hash === hash);
 
   return (
     <header className="site-header">
@@ -17,8 +19,14 @@ export default function Header() {
             Glossary
           </a>
           <a
-            href="#intro-guide"
-            className={`nav-cta ${hash === "#interactive-guide" ? "is-active" : ""}`}
+            href="#cheat-sheet"
+            className={hash === "#cheat-sheet" ? "is-active" : ""}
+          >
+            Cheat Sheet
+          </a>
+          <a
+            href={COURSE_STEPS[0].hash}
+            className={`nav-cta ${inCourse ? "is-active" : ""}`}
           >
             Start Course →
           </a>
