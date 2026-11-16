@@ -369,3 +369,25 @@
   font-weight: 600;
   color: var(--ac-text-muted);
 }
+
+/* User story vinda da página anterior */
+.ac-story {
+  background: var(--ac-white);
+  border: 1.5px solid var(--ac-navy);
+  border-left: 8px solid var(--ac-green);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+}
+
+.ac-story p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.ac-story .ac-story-hint {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--ac-text-muted);
+}

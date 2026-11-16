@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import BackButton from '../BackButton';
 import NextButton from '../NextButton';
+import { loadUserStory } from '../UserStory/userStoryStorage';
 import './AcceptanceCriteria.css';
 
 // Os três campos de cada critério (AC1)
@@ -62,7 +63,12 @@ function validateCriterion(criterion) {
 }
 
 export default function AcceptanceCriteria({ onBack, onNext }) {
-  const [task, setTask] = useState('');
+  // User story guardada na página anterior (se existir)
+  const [userStory] = useState(loadUserStory);
+  // Pré-preenche a tarefa com o "I want" da story (sem o "to" inicial)
+  const [task, setTask] = useState(() =>
+    userStory ? userStory.iWant.trim().replace(/^(i want\s+)?to\s+/i, '') : '',
+  );
   const [criteria, setCriteria] = useState([emptyCriterion(1)]);
   const [showErrors, setShowErrors] = useState(false);
   const [lastAddedId, setLastAddedId] = useState(null);
@@ -125,6 +131,19 @@ export default function AcceptanceCriteria({ onBack, onNext }) {
             check). Clear rules mean fewer arguments at the Sprint Review.
           </p>
         </header>
+
+        {userStory && (
+          <aside className="ac-story">
+            <div className="ac-example-title">Your user story</div>
+            <p>
+              <strong>As a</strong> {userStory.asA.trim()}, <strong>I want</strong>{' '}
+              {userStory.iWant.trim()}, <strong>so that</strong> {userStory.soThat.trim()}.
+            </p>
+            <p className="ac-story-hint">
+              Write the criteria that prove this story is done.
+            </p>
+          </aside>
+        )}
 
         <aside className="ac-example">
           <div className="ac-example-title">Example</div>

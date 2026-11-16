@@ -8,10 +8,11 @@ import CheatSheetPage from "./components/ScrumCeremonies/CheatSheetPage";
 import InteractiveGuide from "./components/InteractiveGuide";
 import IntroGuide from "./components/IntroGuide";
 import Glossary from "./components/Glossary";
+import UserStory from "./components/UserStory/UserStory";
+import { clearUserStory } from "./components/UserStory/userStoryStorage";
 import AcceptanceCriteria from "./components/AcceptanceCriteria/AcceptanceCriteria";
 import GradingEvaluation from "./components/GradingEvaluation/GradingEvaluation";
 import { COURSE_STEPS } from "./courseSteps";
-import ClassroomFaq from "./components/ClassroomFaq";
 import "./App.css";
 
 // Componente de cada etapa do curso (a ordem vem de COURSE_STEPS)
@@ -19,6 +20,7 @@ const COURSE_PAGES = {
   "#intro-guide": IntroGuide,
   "#ceremonies": ScrumCeremonies,
   "#interactive-guide": InteractiveGuide,
+  "#user-story": UserStory,
   "#acceptance-criteria": AcceptanceCriteria,
   "#grading": GradingEvaluation,
 };
@@ -105,6 +107,7 @@ export default function App() {
 
   const resetProgress = () => {
     setCompleted([]);
+    clearUserStory();
     go(COURSE_STEPS[0].hash);
     window.scrollTo(0, 0);
   };
@@ -138,13 +141,10 @@ export default function App() {
       ) : showCheatSheet ? (
         <CheatSheetPage onBack={() => goBackFrom("#cheat-sheet")} />
       ) : (
-        <>
-          <main>
-            <Hero />
-            <Benefits />
-          </main>
-          <ClassroomFaq />
-        </>
+        <main>
+          <Hero />
+          <Benefits />
+        </main>
       )}
     </>
   );

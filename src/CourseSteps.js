@@ -6,6 +6,7 @@ export const COURSE_STEPS = [
   { hash: "#intro-guide", label: "Intro" },
   { hash: "#ceremonies", label: "Scrum ceremonies" },
   { hash: "#interactive-guide", label: "The learning cycle" },
+  { hash: "#user-story", label: "User story" }, 
   { hash: "#acceptance-criteria", label: "Acceptance criteria" },
   { hash: "#grading", label: "Fair grading" },
 ];
