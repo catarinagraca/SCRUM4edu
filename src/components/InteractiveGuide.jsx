@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ArrowLeft } from "lucide-react";
 import backlog from "../assets/phase-backlog.jpg";
 import planning from "../assets/phase-planning.jpg";
 import sprint from "../assets/phase-sprint.jpg";
@@ -8,6 +7,7 @@ import review from "../assets/phase-review.jpg";
 import retro from "../assets/phase-retro.jpg";
 import "./css/InteractiveGuide.css";
 import NextButton from "./NextButton";
+import BackButton from "./BackButton";
 
 const noteColors = ["var(--sticky)", "var(--sticky-2)", "var(--sticky-3)"];
 
@@ -22,23 +22,14 @@ const phases = [
                                 
 const R = 36; // raio do círculo (em % / unidades do viewBox)
 
-export default function InteractiveGuide({ onBack, onNext }) {
+export default function InteractiveGuide({ onBack, onNext, nextLabel = "Next: Acceptance criteria" }) {
   const [active, setActive] = useState(0);
   const p = phases[active];
 
   return (
     <main className="guide">
       <div className="guide-inner">
-        <a
-          className="guide-back"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            onBack?.();
-          }}
-        >
-          <ArrowLeft size={16} aria-hidden="true" /> Back
-        </a>
+        {onBack && <BackButton onClick={onBack} />}
         <h1>The 6-phase learning cycle.</h1>
         <p className="guide-lead">Pick a phase to see how it works in your classroom.</p>
 
@@ -128,7 +119,7 @@ export default function InteractiveGuide({ onBack, onNext }) {
           </aside>
         </div>
 
-        {onNext && <NextButton label="Next: Fair grading" onClick={onNext} />}
+        {onNext && <NextButton label={nextLabel} onClick={onNext} />}
       </div>
     </main>
   );

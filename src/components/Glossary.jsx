@@ -3,6 +3,7 @@ import glossaryTerms from "../data/glossaryTerms.js";
 import GlossaryHeader from "./GlossaryHeader";
 import GlossarySearch from "./GlossarySearch";
 import GlossaryTable from "./GlossaryTable";
+import BackButton from "./BackButton";
 import "./css/Glossary.css";
 
 function normalize(text) {
@@ -12,7 +13,7 @@ function normalize(text) {
     .replace(/[̀-ͯ]/g, "");
 }
 
-export default function Glossary() {
+export default function Glossary({ onBack }) {
   const [query, setQuery] = useState("");
 
   const filteredTerms = useMemo(() => {
@@ -27,6 +28,7 @@ export default function Glossary() {
   return (
     <main className="glossary">
       <div className="glossary__container">
+        {onBack && <BackButton onClick={onBack} />}
         <GlossaryHeader
           title="Glossary: Scrum to Education Translator"
           description="Scrum words can sound complicated. This table shows what each term means in a school setting, in plain language."
