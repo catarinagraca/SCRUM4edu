@@ -13,6 +13,7 @@ import { clearUserStory } from "./components/UserStory/UserStoryStorage.js";
 import AcceptanceCriteria from "./components/AcceptanceCriteria/AcceptanceCriteria";
 import GradingEvaluation from "./components/GradingEvaluation/GradingEvaluation";
 import ClassroomFaq from "./components/ClassroomFaq";
+import BotChat from "./components/BotChat";
 import { COURSE_STEPS } from './CourseSteps.js';
 import "./App.css";
 
@@ -150,6 +151,7 @@ export default function App() {
           <ClassroomFaq />
         </>
       )}
+      <BotChat />
     </>
   );
 }
